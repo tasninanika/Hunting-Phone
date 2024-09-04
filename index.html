@@ -71,10 +71,11 @@
                 d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
                 clip-rule="evenodd" />
             </svg>
-            <input type="text" class="grow" placeholder="Search your phone"/>            
+            <input type="text" class="grow" placeholder="Search your phone" id="search-field"/>            
           </label>
           <button onclick="loadData()" class="btn max-w-lg px-8 text-base bg-[#74700e] text-white">Search</button>
         </div>
+        <span id="loading-spinner" class="loading loading-spinner loading-md hidden"></span>
       </div>
       <!-- phones -->
         <div id="phones-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 mx-32">

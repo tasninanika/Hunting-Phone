@@ -49,7 +49,18 @@ const displayPhones = (phones) =>{
         phonesContainer.appendChild(phoneCards);
     });
 
-    
+    loadingSpinner();
+}
+
+// loading spinner
+const loadingSpinner = (toggle) =>{
+    const spinner = document.getElementById('loading-spinner');
+    if(toggle){
+        spinner.classList.remove('hidden');
+    }
+    else{
+        spinner.classList.add('hidden');
+    }
 }
 
 
