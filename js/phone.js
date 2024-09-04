@@ -25,23 +25,26 @@ const displayPhones = (phones) =>{
         const phoneCards = document.createElement('div');
         console.log(phoneCards);
         // added classes on div
-        phoneCards.classList = `card bg-base-100 w-96 shadow-xl`;
+        phoneCards.classList = `card bg-base-100 w-80 shadow-xl`;
         // added innerhtml on div
         phoneCards.innerHTML = `
         <figure class="px-10 pt-10">
               <img
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes"
+                src="${allphones.image}"
+                alt="phone"
                 class="rounded-xl" />
             </figure>
             <div class="card-body items-center text-center">
-              <h2 class="card-title">Shoes!</h2>
-              <p>If a dog chews shoes whose shoes does he choose?</p>
+              <h2 class="card-title">${allphones.phone_name}</h2>
+              <p>There are many variations of passages of available, but the majority have suffered</p>
+              <p>$999</p>
               <div class="card-actions">
-                <button class="btn btn-primary">Buy Now</button>
+                <button class="btn btn-primary">Show Details</button>
               </div>
             </div>
         `;
+        // append div on container
+        phonesContainer.appendChild(phoneCards);
     });
 
     
