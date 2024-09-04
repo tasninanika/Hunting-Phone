@@ -25,21 +25,23 @@ const displayPhones = (phones) =>{
         const phoneCards = document.createElement('div');
         console.log(phoneCards);
         // added classes on div
-        phoneCards.classList = `card bg-base-100 w-80 shadow-xl`;
+        phoneCards.classList = `card border-2 w-80`;
         // added innerhtml on div
         phoneCards.innerHTML = `
-        <figure class="px-10 pt-10">
+        <div class = "p-5">
+            <figure class="p-10 rounded-xl bg-[#0D6EFD0D]">
               <img
                 src="${allphones.image}"
                 alt="phone"
                 class="rounded-xl" />
             </figure>
+        </div>
             <div class="card-body items-center text-center">
-              <h2 class="card-title">${allphones.phone_name}</h2>
-              <p>There are many variations of passages of available, but the majority have suffered</p>
-              <p>$999</p>
+              <h2 class="card-title text-2xl font-bold mb-2">${allphones.phone_name}</h2>
+              <p class="text-sm text-[#706F6F]">There are many variations of passages of available, but the majority have suffered</p>
+              <h3 class="text-2xl font-bold pb-2">$999</h3>
               <div class="card-actions">
-                <button class="btn btn-primary">Show Details</button>
+                <button class="btn bg-[#74700e] text-white">Show Details</button>
               </div>
             </div>
         `;
