@@ -6,6 +6,7 @@ const loadData = async () =>{
     const phones = data.data;
     // console.log(data);
     displayPhones(phones);
+    search();
 
 }
 
@@ -47,10 +48,20 @@ const displayPhones = (phones) =>{
         `;
         // append div on container
         phonesContainer.appendChild(phoneCards);
-    });
+    })
 
     loadingSpinner();
 }
+
+// get input field
+const search = () =>{
+    loadingSpinner(true);
+    const searchField = document.getElementById('search-field');
+    // console.log(searchField);
+    const searchText = searchField.value;
+    console.log(searchText);
+}
+
 
 // loading spinner
 const loadingSpinner = (toggle) =>{
