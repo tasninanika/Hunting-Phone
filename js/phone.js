@@ -1,13 +1,11 @@
 // first fetch/load the data
-const loadData = async () =>{
+const loadData = async (searchText) =>{
     const res = await
     fetch(`https://openapi.programming-hero.com/api/phones?search=iphone`);
     const data = await res.json();
     const phones = data.data;
     // console.log(data);
     displayPhones(phones);
-    search();
-
 }
 
 // function to show cards
@@ -59,7 +57,8 @@ const search = () =>{
     const searchField = document.getElementById('search-field');
     // console.log(searchField);
     const searchText = searchField.value;
-    console.log(searchText);
+    // console.log(searchText);
+    loadData(searchText);
 }
 
 
