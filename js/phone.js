@@ -16,6 +16,12 @@ const displayPhones = (phones) =>{
     const phonesContainer = document.getElementById('phones-container');
     console.log(phonesContainer);
 
+    // clear phone container before adding new cards
+    phonesContainer.textContent = '';
+
+    // show all
+    
+
     // for each phone create cards
     phones.forEach(allphones => {
         console.log(allphones);
@@ -59,7 +65,7 @@ const search = () =>{
     const searchText = searchField.value;
     // console.log(searchText);
     loadData(searchText);
-    
+    searchField.value = '';
 }
 
 
