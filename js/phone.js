@@ -60,7 +60,7 @@ const displayPhones = (phones, isShowAll) =>{
               <p class="text-sm text-[#706F6F]">There are many variations of passages of available, but the majority have suffered</p>
               <h3 class="text-2xl font-bold pb-2">$999</h3>
               <div class="card-actions">
-                <button onclick="showDetails(${phone.slug})" class="btn bg-[#74700e] text-white">Show Details</button>
+                <button onclick="showDetails('${allphones.slug}')" class="btn bg-[#74700e] text-white">Show Details</button>
               </div>
             </div>
         `;
@@ -70,6 +70,22 @@ const displayPhones = (phones, isShowAll) =>{
 
     loadingSpinner();
 }
+
+// show details
+const showDetails = async (id) =>{
+    // load single phone data
+    const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
+    const data = await res.json();
+    const phone = data.data;
+
+}
+
+// display modal data
+const showPhonedetails = () =>{
+    show_details_modal.showModal();
+}
+
+
 
 // get input field
 const search = (isShowAll) =>{
