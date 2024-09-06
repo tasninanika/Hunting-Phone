@@ -60,7 +60,7 @@ const displayPhones = (phones, isShowAll) =>{
               <p class="text-sm text-[#706F6F]">There are many variations of passages of available, but the majority have suffered</p>
               <h3 class="text-2xl font-bold pb-2">$999</h3>
               <div class="card-actions">
-                <button class="btn bg-[#74700e] text-white">Show Details</button>
+                <button onclick="showDetails(${phone.slug})" class="btn bg-[#74700e] text-white">Show Details</button>
               </div>
             </div>
         `;
@@ -78,8 +78,8 @@ const search = (isShowAll) =>{
     // console.log(searchField);
     const searchText = searchField.value;
     // console.log(searchText);
-    loadData(searchText);
-    searchField.value = '';
+    loadData(searchText, isShowAll);
+    // searchField.value = '';
 }
 
 
