@@ -1,15 +1,15 @@
 // first fetch/load the data
-const loadData = async (searchText) =>{
+const loadData = async (searchText, isShowAll) =>{
     const res = await
     fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`);
     const data = await res.json();
     const phones = data.data;
     // console.log(data);
-    displayPhones(phones);
+    displayPhones(phones, isShowAll);
 }
 
 // function to show cards
-const displayPhones = (phones) =>{
+const displayPhones = (phones, isShowAll) =>{
     console.log(phones);
 
     // get the container
@@ -21,7 +21,7 @@ const displayPhones = (phones) =>{
 
     // show all button
     const showAll = document.getElementById('show-all');
-    if(phones.length > 12){
+    if(phones.length > 12 && !isShowAll){
         showAll.classList.remove('hidden');
     }
     else{
@@ -29,8 +29,10 @@ const displayPhones = (phones) =>{
     }
 
     // display 12 phones
-    
-        phones = phones.slice(0,12);
+    if(!isShowAll){
+        phones = phones.slice(0,12); 
+    }
+
     
 
 
@@ -93,7 +95,7 @@ const loadingSpinner = (toggle) =>{
 }
 
 // handle show all
-// const handleShowall = () =>{
-//     search(true);
-// }
+const handleShowall = () =>{
+    search(true);
+}
 
