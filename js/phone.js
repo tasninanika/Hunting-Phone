@@ -86,10 +86,26 @@ const showPhonedetails = (phone) =>{
     
     const showDetailContainer = document.getElementById('show-detail-container');
     showDetailContainer.innerHTML = `
-    <img src="${phone.image}" alt="" />
-    <h3 id="show-detail-phone-name" class="text-3xl font-bold">${phone?.name}</h3>
-    <p><span>Storage:</span>${phone?.mainFeatures?.storage}</p>
-    <p><span>GPS: </span>${phone?.others?.GPS || 'No GPS Acailable'}</p>
+    <div class = "p-1">
+            <figure class="flex justify-center py-10 rounded-xl bg-[#0D6EFD0D]">
+              <img
+                src="${phone.image}"
+                alt="phone"
+                />
+            </figure>
+        </div>
+    <div class="ml-1 mt-4">
+        <h3 id="show-detail-phone-name" class="text-2xl font-bold">${phone?.name}</h3>
+        <p class="text-sm text-[#706F6F] mt-2">        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+        <p class="mt-3 text-sm"><span class="font-semibold">Storage :</span><span class="text-[#706F6F] "> ${phone?.mainFeatures?.storage}</span></p>
+        <p class="mt-3 text-sm"><span class="font-semibold">Display Size :</span> <span class="text-[#706F6F]"> ${phone?.mainFeatures?.displaySize}</span></p>
+        <p class="mt-3 text-sm"><span class="font-semibold">Chipset :</span><span class="text-[#706F6F]"> ${phone?.mainFeatures?.chipSet}</span></p>
+        <p class="mt-3 text-sm"><span class="font-semibold">Memory :</span><span class="text-[#706F6F]"> ${phone?.mainFeatures?.memory}</span></p>
+        <p class="mt-3 text-sm"><span class="font-semibold">Slug :</span><span class="text-[#706F6F]"> ${phone?.slug}</span></p>
+        <p class="mt-3 text-sm"><span class="font-semibold">Release data :</span><span class="text-[#706F6F]"> ${phone?.releaseDate}</span></p>
+        <p class="mt-3 text-sm"><span class="font-semibold">Brand :</span><span class="text-[#706F6F]"> ${phone?.brand}</span></p>
+        <p class="mt-3 text-sm"><span class="font-semibold">GPS :</span><span class="text-[#706F6F]"> ${phone?.others?.GPS || 'No GPS Acailable'}</span></p>
+    </div>
     `
 
     show_details_modal.showModal();
