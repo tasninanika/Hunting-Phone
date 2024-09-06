@@ -1,7 +1,7 @@
 // first fetch/load the data
 const loadData = async (searchText) =>{
     const res = await
-    fetch(`https://openapi.programming-hero.com/api/phones?search=iphone`);
+    fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText}`);
     const data = await res.json();
     const phones = data.data;
     // console.log(data);
@@ -59,6 +59,7 @@ const search = () =>{
     const searchText = searchField.value;
     // console.log(searchText);
     loadData(searchText);
+    
 }
 
 
