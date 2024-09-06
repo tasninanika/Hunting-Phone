@@ -19,8 +19,10 @@ const displayPhones = (phones) =>{
     // clear phone container before adding new cards
     phonesContainer.textContent = '';
 
-    // show all
-    
+    // show all button
+    const showAll = document.getElementById('show-all');
+    if(phones.length > 12)
+
 
     // for each phone create cards
     phones.forEach(allphones => {
@@ -80,4 +82,8 @@ const loadingSpinner = (toggle) =>{
     }
 }
 
+// handle show all
+const handleShowall = (){
+    search(true);
+}
 
