@@ -86,6 +86,23 @@
       <button onclick="handleShowall()" class="btn text-base bg-[#74700e] text-white">Show All</button>
      </div>
     </section>
+    <!-- show details modal -->
+         <!-- Open the modal using ID.showModal() method -->
+         <dialog id="show_details_modal" class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+              <h3 id="show-detail-phone-name" class="text-3xl font-bold"></h3>
+              <div id="show-detail-container">
+                  
+
+              </div>
+              <div class="modal-action">
+              <form method="dialog">
+                  <!-- if there is a button in form, it will close the modal -->
+                  <button class="btn">Close</button>
+              </form>
+              </div>
+          </div>
+          </dialog>
     </main>
     <!-- footer -->
     <footer class="footer bg-[#0D6EFD0D] text-base-content border-base-300 border-b lg:px-32 px-10 py-16">

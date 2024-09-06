@@ -77,11 +77,23 @@ const showDetails = async (id) =>{
     const res = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`);
     const data = await res.json();
     const phone = data.data;
+    showPhonedetails(phone);
 
 }
 
 // display modal data
-const showPhonedetails = () =>{
+const showPhonedetails = (phone) =>{
+    const phoneName = document.getElementById('show-detail-phone-name');
+    phoneName.innerText = phone.name;
+
+
+    const showDetailContainer = document.getElementById('show-detail-container');
+    showDetailContainer.innerHTML = `
+    <img src="${phone.image}" alt="" />
+    <p><span>Storage:</span>${phone?.mainFeatures?.storage}</p>
+    <p><span>GPS: </span>${phone?.others?.GPS || 'No GPS Acailable'}</p>
+    `
+
     show_details_modal.showModal();
 }
 
