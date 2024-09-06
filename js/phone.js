@@ -5,11 +5,11 @@ const loadData = async (searchText) =>{
     const data = await res.json();
     const phones = data.data;
     // console.log(data);
-    displayPhones(phones, isShowAll);
+    displayPhones(phones);
 }
 
 // function to show cards
-const displayPhones = (phones, isShowAll) =>{
+const displayPhones = (phones) =>{
     console.log(phones);
 
     // get the container
@@ -21,7 +21,7 @@ const displayPhones = (phones, isShowAll) =>{
 
     // show all button
     const showAll = document.getElementById('show-all');
-    if(phones.length > 12 && !isShowAll){
+    if(phones.length > 12){
         showAll.classList.remove('hidden');
     }
     else{
@@ -29,9 +29,9 @@ const displayPhones = (phones, isShowAll) =>{
     }
 
     // display 12 phones
-    if(!isShowAll){
+    
         phones = phones.slice(0,12);
-    }
+    
 
 
     // for each phone create cards
@@ -76,7 +76,7 @@ const search = (isShowAll) =>{
     // console.log(searchField);
     const searchText = searchField.value;
     // console.log(searchText);
-    loadData(searchText, isShowAll);
+    loadData(searchText);
     searchField.value = '';
 }
 
@@ -93,7 +93,7 @@ const loadingSpinner = (toggle) =>{
 }
 
 // handle show all
-const handleShowall = () =>{
-    search(true);
-}
+// const handleShowall = () =>{
+//     search(true);
+// }
 
