@@ -83,13 +83,11 @@ const showDetails = async (id) =>{
 
 // display modal data
 const showPhonedetails = (phone) =>{
-    const phoneName = document.getElementById('show-detail-phone-name');
-    phoneName.innerText = phone.name;
-
-
+    
     const showDetailContainer = document.getElementById('show-detail-container');
     showDetailContainer.innerHTML = `
     <img src="${phone.image}" alt="" />
+    <h3 id="show-detail-phone-name" class="text-3xl font-bold">${phone?.name}</h3>
     <p><span>Storage:</span>${phone?.mainFeatures?.storage}</p>
     <p><span>GPS: </span>${phone?.others?.GPS || 'No GPS Acailable'}</p>
     `
