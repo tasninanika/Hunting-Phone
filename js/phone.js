@@ -66,7 +66,12 @@ const displayPhones = (phones, isShowAll) =>{
         `;
         // append div on container
         phonesContainer.appendChild(phoneCards);
-    })
+    });
+
+
+    // Hide the static phones container when searching
+    const staticPhonesContainer = document.getElementById('static-phones-container');
+    staticPhonesContainer.classList.add('hidden');
 
     loadingSpinner();
 }
@@ -209,5 +214,6 @@ const loadingSpinner = (toggle) =>{
 // handle show all
 const handleShowall = () =>{
     search(true);
+    
 }
 
