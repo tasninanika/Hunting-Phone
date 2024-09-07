@@ -71,6 +71,76 @@ const displayPhones = (phones, isShowAll) =>{
     loadingSpinner();
 }
 
+// static phones
+const loadPhones = async (isShowAll) => {
+    try {
+        const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=iphone`);
+        const data2 = await res.json();
+        const staticPhones = data2.data;
+        displayStaticPhones(staticPhones, isShowAll);
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
+}
+
+// display static phones
+const displayStaticPhones = (staticPhones, isShowAll) => {
+
+    // get the container
+    const staticPhonesContainer = document.getElementById('static-phones-container');
+
+    // clear phone container before adding new cards
+    staticPhonesContainer.textContent = '';
+
+    // show all button
+    const showAll = document.getElementById('show-all');
+    if (staticPhones.length > 12 && !isShowAll) {
+        showAll.classList.remove('hidden');
+    } else {
+        showAll.classList.add('hidden');
+    }
+
+    // display 12 phones
+    if (!isShowAll) {
+        staticPhones = staticPhones.slice(0, 12);
+    }
+
+    // for each phone create cards
+    staticPhones.forEach(phone => {
+        console.log(phone);
+
+        // create div for each phone
+        const staticPhoneCards = document.createElement('div');
+
+        // added classes on div
+        staticPhoneCards.className = `card border-2 w-80`;
+
+        // added innerHTML on div
+        staticPhoneCards.innerHTML = `
+        <div class="p-5">
+            <figure class="p-10 rounded-xl bg-[#0D6EFD0D]">
+              <img src="${phone.image}" alt="phone" class="rounded-xl" />
+            </figure>
+        </div>
+        <div class="card-body items-center text-center">
+              <h2 class="card-title text-2xl font-bold mb-2">${phone.phone_name}</h2>
+              <p class="text-sm text-[#706F6F]">There are many variations of passages available, but the majority have suffered</p>
+              <h3 class="text-2xl font-bold pb-2">$999</h3>
+              <div class="card-actions">
+                <button onclick="showDetails('${phone.slug}')" class="btn bg-[#74700e] text-white">Show Details</button>
+              </div>
+        </div>
+        `;
+
+        // append div on container
+        staticPhonesContainer.appendChild(staticPhoneCards);
+    });
+}
+
+// Example: Load phones with the show all option set to false
+loadPhones(false);
+
+
 // show details
 const showDetails = async (id) =>{
     // load single phone data
