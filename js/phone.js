@@ -99,7 +99,7 @@ const displayStaticPhones = (staticPhones, isShowAll) => {
 
     // show all button
     const showAll = document.getElementById('show-all');
-    if (staticPhones.length > 12 && !isShowAll) {
+    if (staticPhones.length > 9 && !isShowAll) {
         showAll.classList.remove('hidden');
     } else {
         showAll.classList.add('hidden');
@@ -107,7 +107,7 @@ const displayStaticPhones = (staticPhones, isShowAll) => {
 
     // display 12 phones
     if (!isShowAll) {
-        staticPhones = staticPhones.slice(0, 12);
+        staticPhones = staticPhones.slice(0, 9);
     }
 
     // for each phone create cards
@@ -213,7 +213,16 @@ const loadingSpinner = (toggle) =>{
 
 // handle show all
 const handleShowall = () =>{
-    search(true);
+    const staticPhonesContainer = document.getElementById('static-phones-container');
     
+    if (!staticPhonesContainer.classList.contains('hidden')) {
+        // Show all static phones
+        loadPhones(true);
+    } else {
+        // Show all searched phones
+        search(true);
+    }
 }
+    
+
 
