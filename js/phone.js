@@ -44,7 +44,7 @@ const displayPhones = (phones, isShowAll) =>{
         const phoneCards = document.createElement('div');
         console.log(phoneCards);
         // added classes on div
-        phoneCards.classList = `card border-2 w-80`;
+        phoneCards.classList = `card border-2 w-full`;
         // added innerhtml on div
         phoneCards.innerHTML = `
         <div class = "p-5">
@@ -118,7 +118,7 @@ const displayStaticPhones = (staticPhones, isShowAll) => {
         const staticPhoneCards = document.createElement('div');
 
         // added classes on div
-        staticPhoneCards.className = `card border-2 w-80`;
+        staticPhoneCards.className = `card border-2 w-full`;
 
         // added innerHTML on div
         staticPhoneCards.innerHTML = `
