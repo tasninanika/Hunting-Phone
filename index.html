@@ -28,50 +28,47 @@
 </head>
 <body class="font-poppins">
     <!-- header -->
-    <header class="bg-[#0D6EFD0D] py-10 px-20">
+    <header class="bg-[#0D6EFD0D] lg:py-10 lg:px-20">
         <div class="container mx-auto">
           <div class="navbar">
             <div class="navbar-start">
-              <h3 class="text-[#403F3F] text-2xl font-bold">Hot Gadgets</h3>
+              <h3 class="text-[#403F3F] lg:text-2xl text-lg font-bold">Hot Gadgets</h3>
             </div>
             <div class="navbar-end">
-              <button class="btn text-lg font-semibold px-6 bg-[#74700e] text-white">Sign Up</button>
+              <button class="btn lg:text-lg px-3 text-sm font-semibold lg:px-6 bg-[#74700e] text-white">Sign Up</button>
             </div>
         </div>
         <!--  -->
         <div class="my-12 text-center">
-          <h1 class="text-6xl font-bold">Apple Iphone 13 Pro Max</h1>
-          <p class="mt-8 font mb-6 text-[#706f6ff9]">There are many variations of passages of Lorem Ipsum available, but the majority <br> have suffered alteration in some form, by injected humou.</p>
+          <h1 class="lg:text-6xl text-2xl font-bold">Apple Iphone 13 Pro Max</h1>
+          <p class="mt-8 font mb-6 text-[#706f6ff9] text-sm lg:text-lg">There are many variations of passages of Lorem Ipsum available, but the majority <br> have suffered alteration in some form, by injected humou.</p>
           <button class="btn text-lg font-semibold px-6 bg-[#74700e] text-white">Buy Now</button>
         </div>
       </div>
         <!-- picture -->
-         <!-- <div class="w-4/5 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          <img src="images/pngwing 3.png" alt="" class="lg:mt-36 lg:ml-20">
-          <img src="images/pngwing 1.png" alt="">
-          <img src="images/pngwing 3.png" alt="" class="lg:mt-36">
-         </div> -->
-         <div class="w-4/5 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          <div>
-            <img src="images/pngwing 3.png" alt="" class="block ms-11 mt-16">
-          </div>
-          <div>
-            <img src="images/pngwing 1.png" alt="" class="block">
-          </div>
-          <div>
-            <img src="images/pngwing 3.png" alt="" class="block mt-16">
+         <div class="w-4/5 mx-auto">
+          <div class="lg:flex justify-center items-baseline">
+            <div>
+              <img src="images/pngwing 3.png" alt="" class="block">
+            </div>
+            <div>
+              <img src="images/pngwing 1.png" alt="" class="block">
+            </div>
+            <div>
+              <img src="images/pngwing 3.png" alt="" class="block">
+            </div>
           </div>
          </div>
     </header>
     <!-- main -->
     <main class="mx-auto my-20">
       <div class="text-center">
-        <h2 class="text-4xl font-semibold mb-7">Search your phone</h2>
+        <h2 class="text-lg lg:text-4xl font-semibold mb-7">Search your phone</h2>
       <!-- main content -->
       <section> 
         <!-- search field -->
-        <div class="flex flex-col lg:flex-row md:flex-row justify-center gap-2 mb-20">
-          <label class="input input-bordered w-full max-w-xl bg-base-200 border-none flex items-center gap-2 text-sm">
+        <div class="flex flex-col lg:flex-row md:flex-row justify-center gap-2 mb-20 items-center">
+          <label class="input input-bordered w-11/12 max-w-xl bg-base-200 border-none flex items-center gap-2 text-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
@@ -84,7 +81,7 @@
             </svg>
             <input type="text" class="grow" placeholder="Search your phone" id="search-field"/>            
           </label>
-          <button onclick="search()" class="btn max-w-lg px-8 text-base bg-[#74700e] text-white">Search</button>
+          <button onclick="search()" class="btn lg:max-w-lg px-8 text-base bg-[#74700e] text-white">Search</button>
         </div>
         <span id="loading-spinner" class="loading loading-spinner loading-md hidden"></span>
       </div>
